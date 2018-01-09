@@ -15,8 +15,8 @@ call vundle#end()
 
 
 filetype plugin indent on
-"set tabstop=2
-"set shiftwidth=2
+set tabstop=2
+set shiftwidth=2
 "autocmd Filetype python setlocal ts=4 sw=4
 "autocmd Filetype json setlocal ts=4 sw=4
 "set paste
