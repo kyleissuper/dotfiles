@@ -97,6 +97,7 @@ let g:lightline = {
       \ }
 
 " Goyo
+let g:goyo_width = 90
 function! s:goyo_enter()
   set number
   GitGutterEnable
