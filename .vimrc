@@ -14,6 +14,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'andviro/flake8-vim'
 call vundle#end()
 
 
@@ -39,7 +40,7 @@ set t_vb=
 set tm=500
 set foldcolumn=1
 
-" NERDTree
+"NERDTree
 set incsearch
 let mapleader = ','
 map <Leader> <Plug>(easymotion-prefix)
@@ -47,6 +48,11 @@ map <Leader>o :NERDTree<CR>
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"PyFlake
+let g:PyFlakeOnWrite = 1
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
