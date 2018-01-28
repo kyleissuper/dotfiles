@@ -20,6 +20,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mikewest/vimroom'
 call vundle#end()
 
 
