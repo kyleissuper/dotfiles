@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'ervandew/supertab'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-one'
 Plugin 'zanglg/nova.vim'
@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/goyo.vim'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 
 
@@ -106,3 +107,12 @@ map <Leader>V :Goyo<CR>
 " Formatting
 au FileType python setlocal formatprg=autopep8\ -
 map <Leader>c gggqG<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
