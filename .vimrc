@@ -11,6 +11,8 @@ Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-one'
 Plugin 'zanglg/nova.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 
@@ -21,6 +23,7 @@ set shiftwidth=2
 "autocmd Filetype json setlocal ts=4 sw=4
 "set paste
 set expandtab
+set smarttab
 set number
 set mouse-=a
 set hlsearch
@@ -28,6 +31,17 @@ set foldmethod=indent
 "set nofoldenable
 "syntax on
 "colorscheme default
+set lazyredraw
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+set foldcolumn=1
+
+let mapleader = ','
+map <Leader> <Plug>(easymotion-prefix)
+map <Leader>o :NERDTree<CR>
+set incsearch
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
