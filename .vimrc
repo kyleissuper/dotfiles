@@ -15,6 +15,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'andviro/flake8-vim'
+Plugin 'tmhedberg/SimpylFold'
 call vundle#end()
 
 
