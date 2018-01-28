@@ -14,7 +14,6 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'andviro/flake8-vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
@@ -99,6 +98,11 @@ let g:lightline = {
 " Goyo
 function! s:goyo_enter()
   set number
+  GitGutterEnable
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 map <Leader>V :Goyo<CR>
+
+" Formatting
+au FileType python setlocal formatprg=autopep8\ -
+map <Leader>c gggqG<CR>
