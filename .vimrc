@@ -13,6 +13,7 @@ Plugin 'zanglg/nova.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 call vundle#end()
 
 
@@ -38,10 +39,14 @@ set t_vb=
 set tm=500
 set foldcolumn=1
 
+" NERDTree
+set incsearch
 let mapleader = ','
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>o :NERDTree<CR>
-set incsearch
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
