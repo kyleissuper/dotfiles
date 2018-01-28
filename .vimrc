@@ -17,6 +17,7 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'andviro/flake8-vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 
