@@ -20,7 +20,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mikewest/vimroom'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
 
@@ -95,3 +95,10 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+" Goyo
+function! s:goyo_enter()
+  set number
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+map <Leader>V :Goyo<CR>
