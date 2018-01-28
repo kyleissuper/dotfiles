@@ -18,6 +18,7 @@ Plugin 'andviro/flake8-vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 
