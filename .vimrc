@@ -32,7 +32,7 @@ set shiftwidth=2
 "set paste
 set expandtab
 set smarttab
-set number
+set relativenumber
 set mouse-=a
 set hlsearch
 set foldmethod=indent
