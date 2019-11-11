@@ -44,6 +44,8 @@ set lazyredraw
 set noerrorbells
 set novisualbell
 set t_vb=
+set t_u7=
+set t_RV=
 set tm=500
 set foldcolumn=1
 set backspace=indent,eol,start
