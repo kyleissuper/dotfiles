@@ -89,16 +89,10 @@ colorscheme atom-dark-256
 
 " Lightline
 set laststatus=2
-" let g:lightline = {
-"       \ 'colorscheme': 'wombat',
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'fugitive#head'
-"       \ },
-"       \ }
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
 
 " Goyo
 let g:goyo_width = 90
@@ -122,4 +116,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_args=['--cache']
+let g:syntastic_javascript_eslint_exe=['eslint_d']
+let g:syntastic_javascript_eslint_exec=['/bin/ls']
 let g:syntastic_loc_list_height = 5
