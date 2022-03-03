@@ -61,6 +61,7 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowLineNumbers=1
+let NERDTreeQuitOnOpen=1
 
 "PyFlake
 let g:PyFlakeOnWrite = 1
