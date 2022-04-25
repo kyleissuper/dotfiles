@@ -128,3 +128,13 @@ let g:syntastic_javascript_eslint_args=['--cache']
 let g:syntastic_javascript_eslint_exe=['eslint_d']
 let g:syntastic_javascript_eslint_exec=['/bin/ls']
 let g:syntastic_loc_list_height = 5
+
+" Override Jedi Vim
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_stubs_command = "<leader>x"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
