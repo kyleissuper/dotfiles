@@ -15,13 +15,12 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plugin 'tmhedberg/SimpylFold'
-"Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'psliwka/vim-smoothie'
 call vundle#end()
 
 
@@ -30,16 +29,12 @@ set tabstop=2
 set shiftwidth=2
 autocmd Filetype python setlocal ts=4 sw=4
 autocmd Filetype json setlocal ts=4 sw=4
-"set paste
 set expandtab
 set smarttab
 set relativenumber
 set mouse-=a
 set hlsearch
 set foldmethod=indent
-"set nofoldenable
-"syntax on
-"colorscheme default
 set lazyredraw
 set noerrorbells
 set novisualbell
@@ -65,23 +60,6 @@ let NERDTreeQuitOnOpen=1
 
 "PyFlake
 let g:PyFlakeOnWrite = 1
-
-"Credit joshdick
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-"if (empty($TMUX))
-"  if (has("nvim"))
-"  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-"  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-"endif
 
 " Theme
 set background=dark
