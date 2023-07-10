@@ -19,7 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/goyo.vim'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'psliwka/vim-smoothie'
 call vundle#end()
 
@@ -92,20 +92,6 @@ map <Leader>V :Goyo<CR>
 " Formatting
 au FileType python setlocal formatprg=autopep8\ -
 map <Leader>c gggqG<CR>
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_args=['--cache']
-let g:syntastic_javascript_eslint_exe=['eslint_d']
-let g:syntastic_javascript_eslint_exec=['/bin/ls']
-let g:syntastic_loc_list_height = 5
 
 " Override Jedi Vim
 let g:jedi#goto_command = "<leader>d"
