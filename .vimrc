@@ -79,3 +79,9 @@ map <Leader>c gggqG<CR>
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Codeium
+imap <C-s> <Cmd>call codeium#Complete()<CR>
+imap <C-j> <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-k> <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-x> <Cmd>call codeium#Clear()<CR>
