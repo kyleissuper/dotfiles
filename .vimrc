@@ -15,7 +15,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'psliwka/vim-smoothie'
-Plugin 'lambdalisue/vim-pyenv'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'Exafunction/codeium.vim'
 call vundle#end()
@@ -79,6 +78,7 @@ map <Leader>c gggqG<CR>
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = 'python'
 
 " Codeium
 imap <C-s> <Cmd>call codeium#Complete()<CR>
