@@ -9,9 +9,6 @@
     ~/.vim: .vim
     ~/.vimrc: .vimrc
     ~/.tern-config: .tern-config
-    ~/.vim/after/syntax/python.vim:
-      create: true
-      path: python.vim
   
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
