@@ -71,21 +71,21 @@ function! LightlineGitGutter()
   return printf('+%d ~%d -%d', l:added, l:modified, l:removed)
 endfunction
 let g:lightline = {
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'readonly', 'filename', 'modified', 'gitbranch', 'gitgutter' ] ],
-  \   'right': [ [ 'lineinfo' ],
-  \              [ 'percent' ],
-  \              [ 'codeium', 'fileformat', 'fileencoding', 'filetype' ] ]
-  \ },
-  \ 'component': {
-  \   'codeium': '%{codeium#GetStatusString()}'
-  \ },
-  \ 'component_function': {
-  \   'gitgutter': 'LightlineGitGutter',
-  \   'gitbranch': 'FugitiveHead'
-  \ },
-  \ }
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'gitbranch', 'gitgutter' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'codeium', 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component': {
+      \   'codeium': '%{codeium#GetStatusString()}'
+      \ },
+      \ 'component_function': {
+      \   'gitgutter': 'LightlineGitGutter',
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " Goyo
 let g:goyo_width = 90
@@ -98,7 +98,7 @@ map <Leader>V :Goyo<CR>
 
 " Formatting
 au FileType python setlocal formatprg=autopep8\ -
-map <Leader>c gggqG<CR>
+  map <Leader>c gggqG<CR>
 
 " YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -123,7 +123,7 @@ function! ToggleSqlSyntax()
     unlet! b:current_syntax_spell
   else
     unlet b:current_syntax
-	  syn include @SQL syntax/sql.vim
+    syn include @SQL syntax/sql.vim
     syn region pythonString matchgroup=pythonQuotes
           \ start=+[uU]\=\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
           \ contains=pythonEscape,@Spell keepend
@@ -131,8 +131,8 @@ function! ToggleSqlSyntax()
           \ start=+[uU]\=[rR]\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
           \ contains=@Spell keepend
     syn region SQLEmbedded contains=@SQL containedin=pythonString,pythonRawString contained
-        \ start=+\v(ALTER|BEGIN|CALL|COMMENT|COMMIT|CONNECT|CREATE|DELETE|DROP|END|EXPLAIN|EXPORT|GRANT|IMPORT|INSERT|LOAD|LOCK|MERGE|REFRESH|RENAME|REPLACE|REVOKE|ROLLBACK|SELECT|SET|TRUNCATE|UNLOAD|UNSET|UPDATE|UPSERT|WITH)+
-        \ end=+;+
+          \ start=+\v(ALTER|BEGIN|CALL|COMMENT|COMMIT|CONNECT|CREATE|DELETE|DROP|END|EXPLAIN|EXPORT|GRANT|IMPORT|INSERT|LOAD|LOCK|MERGE|REFRESH|RENAME|REPLACE|REVOKE|ROLLBACK|SELECT|SET|TRUNCATE|UNLOAD|UNSET|UPDATE|UPSERT|WITH)+
+          \ end=+;+
     let b:current_syntax = "pysql"
     let b:highlight_sql = 1
   endif
