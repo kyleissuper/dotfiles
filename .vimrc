@@ -109,3 +109,31 @@ imap <C-s> <Cmd>call codeium#Complete()<CR>
 imap <C-j> <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <C-k> <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x> <Cmd>call codeium#Clear()<CR>
+
+" Toggle Python SQL Syntax Highlighting
+command! ToggleSqlSyntax call ToggleSqlSyntax()
+function! ToggleSqlSyntax()
+  if exists("b:highlight_sql")
+    syn clear SQLEmbedded
+    syn clear pythonString
+    syn clear pythonRawString
+    unlet b:highlight_sql
+
+    syn enable
+    unlet! b:current_syntax_spell
+  else
+    unlet b:current_syntax
+	  syn include @SQL syntax/sql.vim
+    syn region pythonString matchgroup=pythonQuotes
+          \ start=+[uU]\=\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
+          \ contains=pythonEscape,@Spell keepend
+    syn region  pythonRawString matchgroup=pythonQuotes
+          \ start=+[uU]\=[rR]\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
+          \ contains=@Spell keepend
+    syn region SQLEmbedded contains=@SQL containedin=pythonString,pythonRawString contained
+        \ start=+\v(ALTER|BEGIN|CALL|COMMENT|COMMIT|CONNECT|CREATE|DELETE|DROP|END|EXPLAIN|EXPORT|GRANT|IMPORT|INSERT|LOAD|LOCK|MERGE|REFRESH|RENAME|REPLACE|REVOKE|ROLLBACK|SELECT|SET|TRUNCATE|UNLOAD|UNSET|UPDATE|UPSERT|WITH)+
+        \ end=+;+
+    let b:current_syntax = "pysql"
+    let b:highlight_sql = 1
+  endif
+endfunction
