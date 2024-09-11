@@ -19,7 +19,7 @@ Plugin 'psliwka/vim-smoothie'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'Exafunction/codeium.vim'
 Plugin 'ap/vim-buftabline'
-Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'el-iot/buffer-tree-explorer'
 call vundle#end()
 
 
@@ -42,6 +42,7 @@ set t_u7=
 set t_RV=
 set tm=500
 set foldcolumn=1
+set nofoldenable
 set backspace=indent,eol,start
 
 "NERDTree
@@ -142,8 +143,9 @@ endfunction
 
 " Buffer changing
 set hidden
-let g:buffergator_suppress_keymaps = 1
-nnoremap <Leader>[ :BuffergatorOpen<CR>
+let g:buffertree_close_on_enter = 1
+let g:buffer_tree_explorer_compress = 1
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <Leader>q :bd<CR>
+nnoremap <Leader>[ :Tree<CR>
