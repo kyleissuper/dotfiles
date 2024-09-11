@@ -18,6 +18,8 @@ Plugin 'dense-analysis/ale'
 Plugin 'psliwka/vim-smoothie'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'Exafunction/codeium.vim'
+Plugin 'ap/vim-buftabline'
+Plugin 'jeetsukumaran/vim-buffergator'
 call vundle#end()
 
 
@@ -137,3 +139,11 @@ function! ToggleSqlSyntax()
     let b:highlight_sql = 1
   endif
 endfunction
+
+" Buffer changing
+set hidden
+let g:buffergator_suppress_keymaps = 1
+nnoremap <Leader>[ :BuffergatorOpen<CR>
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
+nnoremap <Leader>q :bd<CR>
