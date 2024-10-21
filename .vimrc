@@ -20,6 +20,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'Exafunction/codeium.vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'el-iot/buffer-tree-explorer'
+Plugin 'wfxr/minimap.vim'
 call vundle#end()
 
 
@@ -149,3 +150,9 @@ nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <Leader>q :bd<CR>
 nnoremap <Leader>[ :Tree<CR>
+
+" Minimap
+let g:minimap_auto_start = 1
+let g:minimap_block_filetypes = ['nerdtree', 'fugitive']
+let g:minimap_close_filetypes = ['nerdtree', 'fugitive']
+nnoremap <C-m> :MinimapToggle<CR>
